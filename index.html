@@ -53,7 +53,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 64px 64px;
@@ -689,7 +689,7 @@ body::before {
 <body>
 
 <!-- ═══════ BETA BAR ═══════ -->
-<div class="beta-bar">Estamos en beta privada — Acceso anticipado disponible</div>
+<div class="beta-bar" data-i18n="beta">Estamos en beta privada — Acceso anticipado disponible</div>
 
 <!-- ═══════ NAV ═══════ -->
 <nav class="nav">
@@ -697,21 +697,21 @@ body::before {
     <div class="nav-left">
       <a href="#" class="nav-logo">THE <span>EDGE</span></a>
       <div class="lang-selector">
-        <button class="lang-btn active">ES</button>
-        <button class="lang-btn">EN</button>
-        <button class="lang-btn">PT</button>
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
       </div>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="#producto">Producto</a></li>
-      <li><a href="#ejemplo">Ejemplo real</a></li>
-      <li><a href="#precio">Precio</a></li>
-      <li><a href="#planes">Planes</a></li>
+      <li><a href="#producto" data-i18n="nav.producto">Producto</a></li>
+      <li><a href="#ejemplo" data-i18n="nav.ejemplo">Ejemplo real</a></li>
+      <li><a href="#precio" data-i18n="nav.precio">Precio</a></li>
+      <li><a href="#planes" data-i18n="nav.planes">Planes</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://app.theedgelatam.io" class="nav-cta" target="_blank">Acceso beta</a></li>
+      <li><a href="https://app.theedgelatam.io" class="nav-cta" target="_blank" data-i18n="nav.cta">Acceso beta</a></li>
     </ul>
   </div>
 </nav>
@@ -720,42 +720,42 @@ body::before {
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-tag">Inteligencia financiera independiente</div>
-      
-      <h1>Tu analista financiero personal.<br><em>$9/mes</em> en vez de $150,000/año.</h1>
-      
-      <p class="hero-sub">
+      <div class="hero-tag" data-i18n="hero.tag">Inteligencia financiera independiente</div>
+
+      <h1 data-i18n-html="hero.h1">Tu analista financiero personal.<br><em>$9/mes</em> en vez de $150,000/año.</h1>
+
+      <p class="hero-sub" data-i18n-html="hero.sub">
         <strong>4 analistas AI</strong> monitorean 46 fuentes en 5 idiomas cada 6 horas.
         Te dicen qué pasó, por qué importa, y qué considerar.<br>
         Sin conflictos de interés. Sin posiciones propias.
       </p>
-      
+
       <div class="hero-ctas">
         <a href="https://wa.me/13502231166" class="btn-primary" target="_blank">
           <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Empezar gratis
+          <span data-i18n="hero.cta1">Empezar gratis</span>
         </a>
         <a href="https://app.theedgelatam.io" class="btn-secondary" target="_blank">
-          Ver el informe de hoy →
+          <span data-i18n="hero.cta2">Ver el informe de hoy →</span>
         </a>
       </div>
-      
+
       <div class="hero-metrics">
         <div class="hero-metric">
           <div class="hero-metric-value">46</div>
-          <div class="hero-metric-label">Fuentes globales</div>
+          <div class="hero-metric-label" data-i18n="hero.m1">Fuentes globales</div>
         </div>
         <div class="hero-metric">
           <div class="hero-metric-value">5</div>
-          <div class="hero-metric-label">Idiomas</div>
+          <div class="hero-metric-label" data-i18n="hero.m2">Idiomas</div>
         </div>
         <div class="hero-metric">
           <div class="hero-metric-value">6h</div>
-          <div class="hero-metric-label">Frecuencia</div>
+          <div class="hero-metric-label" data-i18n="hero.m3">Frecuencia</div>
         </div>
         <div class="hero-metric">
           <div class="hero-metric-value">4+1</div>
-          <div class="hero-metric-label">Analistas AI</div>
+          <div class="hero-metric-label" data-i18n="hero.m4">Analistas AI</div>
         </div>
       </div>
     </div>
@@ -765,16 +765,16 @@ body::before {
 <!-- ═══════ MISSION ═══════ -->
 <section class="mission">
   <div class="container">
-    <p class="mission-quote reveal">
+    <p class="mission-quote reveal" data-i18n="mission.quote">
       "El analista financiero personal que cualquier persona que invierte debería tener — pero no puede pagar."
     </p>
-    <p class="mission-body reveal">
-      Un analista de research en un family office cuesta <strong>$80,000–$150,000/año</strong>. 
-      Un wealth manager cobra <strong>1–2% de tu capital</strong>. 
-      The Edge te da esa misma función — alguien que monitorea el mundo, cruza la información, 
+    <p class="mission-body reveal" data-i18n-html="mission.body">
+      Un analista de research en un family office cuesta <strong>$80,000–$150,000/año</strong>.
+      Un wealth manager cobra <strong>1–2% de tu capital</strong>.
+      The Edge te da esa misma función — alguien que monitorea el mundo, cruza la información,
       te explica qué está pasando, y te ayuda a pensar qué hacer — por <strong>$9/mes</strong>.
     </p>
-    <span class="mission-tag reveal">Para personas reales. No instituciones.</span>
+    <span class="mission-tag reveal" data-i18n="mission.tag">Para personas reales. No instituciones.</span>
   </div>
 </section>
 
@@ -789,41 +789,41 @@ body::before {
 <!-- ═══════ FEATURES ═══════ -->
 <section class="section" id="producto">
   <div class="container">
-    <span class="section-label reveal">Qué obtienes</span>
-    <h2 class="section-title reveal">Todo lo que un analista de<br>$150K/año haría por ti.</h2>
-    <p class="section-subtitle reveal">Excepto cobrarte $150K.</p>
-    
+    <span class="section-label reveal" data-i18n="feat.label">Qué obtienes</span>
+    <h2 class="section-title reveal" data-i18n-html="feat.title">Todo lo que un analista de<br>$150K/año haría por ti.</h2>
+    <p class="section-subtitle reveal" data-i18n="feat.sub">Excepto cobrarte $150K.</p>
+
     <div class="features-grid">
       <div class="feature-card reveal">
         <div class="feature-icon">📊</div>
-        <h3>Briefing cada 6 horas</h3>
-        <p>4 analistas especializados (Macro, Crypto, Mercados, Geopolítica) + un Editor Jefe que integra todo y detecta contradicciones entre ellos.</p>
+        <h3 data-i18n="feat1.title">Briefing cada 6 horas</h3>
+        <p data-i18n="feat1.desc">4 analistas especializados (Macro, Crypto, Mercados, Geopolítica) + un Editor Jefe que integra todo y detecta contradicciones entre ellos.</p>
         <div class="feature-detail">
-          <span>Framework HECHO → IMPACTO → ACCIÓN</span>
-          <span>46 fuentes en 5 idiomas</span>
-          <span>Conexiones cruzadas entre noticias</span>
+          <span data-i18n="feat1.d1">Framework HECHO → IMPACTO → ACCIÓN</span>
+          <span data-i18n="feat1.d2">46 fuentes en 5 idiomas</span>
+          <span data-i18n="feat1.d3">Conexiones cruzadas entre noticias</span>
         </div>
       </div>
-      
+
       <div class="feature-card reveal">
         <div class="feature-icon">💬</div>
-        <h3>Tu analista en WhatsApp</h3>
-        <p>"¿Qué hago con mi ETH?" — respuestas con contexto real del mercado del día. No un chatbot genérico. Un analista que sabe qué pasó hoy.</p>
+        <h3 data-i18n="feat2.title">Tu analista en WhatsApp</h3>
+        <p data-i18n="feat2.desc">"¿Qué hago con mi ETH?" — respuestas con contexto real del mercado del día. No un chatbot genérico. Un analista que sabe qué pasó hoy.</p>
         <div class="feature-detail">
-          <span>Preguntas sobre tus inversiones</span>
-          <span>Contexto de tus posiciones</span>
-          <span>Respuestas en segundos</span>
+          <span data-i18n="feat2.d1">Preguntas sobre tus inversiones</span>
+          <span data-i18n="feat2.d2">Contexto de tus posiciones</span>
+          <span data-i18n="feat2.d3">Respuestas en segundos</span>
         </div>
       </div>
-      
+
       <div class="feature-card reveal">
         <div class="feature-icon">🧠</div>
-        <h3>Memoria acumulativa</h3>
-        <p>Conecta informes anteriores. Valida tesis con el tiempo. Track record público que puedes verificar. No olvida lo que dijo hace 3 semanas.</p>
+        <h3 data-i18n="feat3.title">Memoria acumulativa</h3>
+        <p data-i18n="feat3.desc">Conecta informes anteriores. Valida tesis con el tiempo. Track record público que puedes verificar. No olvida lo que dijo hace 3 semanas.</p>
         <div class="feature-detail">
-          <span>Historial de análisis hasta 30 días</span>
-          <span>Tesis validadas públicamente</span>
-          <span>Portfolio tracking personalizado</span>
+          <span data-i18n="feat3.d1">Historial de análisis hasta 30 días</span>
+          <span data-i18n="feat3.d2">Tesis validadas públicamente</span>
+          <span data-i18n="feat3.d3">Portfolio tracking personalizado</span>
         </div>
       </div>
     </div>
@@ -833,34 +833,34 @@ body::before {
 <!-- ═══════ EXAMPLE ═══════ -->
 <section class="section" id="ejemplo" style="padding-top: 40px;">
   <div class="container">
-    <span class="section-label reveal">Así se ve un análisis real</span>
-    <h2 class="section-title reveal">Esto es lo que recibes<br>cada mañana.</h2>
-    <p class="section-subtitle reveal">Extracto real del informe del 24 Feb 2026. Sin editar.</p>
-    
+    <span class="section-label reveal" data-i18n="ex.label">Así se ve un análisis real</span>
+    <h2 class="section-title reveal" data-i18n-html="ex.title">Esto es lo que recibes<br>cada mañana.</h2>
+    <p class="section-subtitle reveal" data-i18n="ex.sub">Extracto real del informe del 24 Feb 2026. Sin editar.</p>
+
     <div class="example-card reveal">
       <div class="example-header">
         <div class="example-header-left">
           <div class="example-dot green"></div>
-          <span class="example-header-title">REPORTE THE EDGE v5.0</span>
+          <span class="example-header-title" data-i18n="ex.header">REPORTE THE EDGE v5.0</span>
         </div>
-        <span class="example-header-time">24 Feb 2026 · 07:00 CLT</span>
+        <span class="example-header-time" data-i18n="ex.time">24 Feb 2026 · 07:00 CLT</span>
       </div>
       <div class="example-body">
-        <div class="example-analyst">◆ NOTICIA PRINCIPAL · ALTA URGENCIA</div>
-        <div class="example-text">
+        <div class="example-analyst" data-i18n="ex.analyst">◆ NOTICIA PRINCIPAL · ALTA URGENCIA</div>
+        <div class="example-text" data-i18n-html="ex.text">
           <p><strong>US Sets Initial Duties on Indian Solar Imports at 126%</strong></p>
           <p>Trump impuso aranceles hasta <span class="hl">146%</span> sobre paneles solares de India, Indonesia y Laos. Afecta <span class="hl">$15 mil millones</span> anuales en importaciones solares.</p>
           <p><strong>Conexión cruzada:</strong> México y Brasil capturan demanda desplazada. 3 manufactureras mexicanas ya expandieron capacidad <span class="hl">40-60%</span> en Q1 2026 anticipando el impacto. El mercado aún no conectó esto.</p>
           <p>Ventana estimada: <span class="hl">12-18 horas</span> para que mercados mexicanos/brasileños reaccionen completamente.</p>
         </div>
         <div class="example-action">
-          <div class="example-action-label">Acción sugerida</div>
-          Comprar México ETF (EWW $51-51.50) + Brasil ETF (EWZ $32.20-32.60). Mercado aún no pricing el redireccionamiento de $15B en flujos. Horizonte: 6-8 semanas.
+          <div class="example-action-label" data-i18n="ex.action.label">Acción sugerida</div>
+          <span data-i18n="ex.action.text">Comprar México ETF (EWW $51-51.50) + Brasil ETF (EWZ $32.20-32.60). Mercado aún no pricing el redireccionamiento de $15B en flujos. Horizonte: 6-8 semanas.</span>
         </div>
       </div>
       <div class="example-footer">
-        <span class="example-footer-text">15 fuentes · 4 analistas · 5 continentes</span>
-        <a href="https://wa.me/13502231166" class="example-footer-cta" target="_blank">Recibirlo gratis →</a>
+        <span class="example-footer-text" data-i18n="ex.footer.text">15 fuentes · 4 analistas · 5 continentes</span>
+        <a href="https://wa.me/13502231166" class="example-footer-cta" target="_blank" data-i18n="ex.footer.cta">Recibirlo gratis →</a>
       </div>
     </div>
   </div>
@@ -869,45 +869,45 @@ body::before {
 <!-- ═══════ PRICE COMPARISON ═══════ -->
 <section class="section" id="precio">
   <div class="container">
-    <span class="section-label reveal">Por qué The Edge</span>
-    <h2 class="section-title reveal">La misma función.<br>100x más barato.</h2>
-    
+    <span class="section-label reveal" data-i18n="comp.label">Por qué The Edge</span>
+    <h2 class="section-title reveal" data-i18n-html="comp.title">La misma función.<br>100x más barato.</h2>
+
     <div class="comparison-layout">
       <div class="comparison-table reveal">
         <div class="comparison-row">
-          <span class="comparison-name">Analista de research</span>
-          <span class="comparison-price">$80,000 — $150,000 /año</span>
+          <span class="comparison-name" data-i18n="comp.r1.name">Analista de research</span>
+          <span class="comparison-price" data-i18n="comp.r1.price">$80,000 — $150,000 /año</span>
         </div>
         <div class="comparison-row">
           <span class="comparison-name">Bloomberg Terminal</span>
-          <span class="comparison-price">$24,000 /año</span>
+          <span class="comparison-price" data-i18n="comp.r2.price">$24,000 /año</span>
         </div>
         <div class="comparison-row">
           <span class="comparison-name">Capital Economics</span>
-          <span class="comparison-price">$5,000 — $30,000 /año</span>
+          <span class="comparison-price" data-i18n="comp.r3.price">$5,000 — $30,000 /año</span>
         </div>
         <div class="comparison-row">
-          <span class="comparison-name">Wealth manager (1% AUM)</span>
-          <span class="comparison-price">$5,000 — $50,000 /año</span>
+          <span class="comparison-name" data-i18n="comp.r4.name">Wealth manager (1% AUM)</span>
+          <span class="comparison-price" data-i18n="comp.r4.price">$5,000 — $50,000 /año</span>
         </div>
         <div class="comparison-row">
           <span class="comparison-name">Delphi Digital</span>
-          <span class="comparison-price">$149 — $999 /mes</span>
+          <span class="comparison-price" data-i18n="comp.r5.price">$149 — $999 /mes</span>
         </div>
         <div class="comparison-row edge">
           <span class="comparison-name">The Edge Pro</span>
-          <span class="comparison-price">$9/mes</span>
+          <span class="comparison-price" data-i18n="comp.edge.price">$9/mes</span>
         </div>
       </div>
-      
+
       <div class="comparison-message reveal">
-        <p class="comparison-message-quote">No es más barato porque sea peor.</p>
-        <p class="comparison-message-body">
-          Es más barato porque <strong>la IA lo hace posible</strong>. 
-          Hasta ahora, tener a alguien monitoreando mercados globales, cruzando información de múltiples fuentes, 
+        <p class="comparison-message-quote" data-i18n="comp.msg.quote">No es más barato porque sea peor.</p>
+        <p class="comparison-message-body" data-i18n-html="comp.msg.body">
+          Es más barato porque <strong>la IA lo hace posible</strong>.
+          Hasta ahora, tener a alguien monitoreando mercados globales, cruzando información de múltiples fuentes,
           y dándote análisis accionable era un privilegio de <strong>family offices e institucionales</strong>.
         </p>
-        <div class="comparison-highlight">
+        <div class="comparison-highlight" data-i18n-html="comp.highlight">
           The Edge democratiza eso.<br>Para personas reales que invierten.
         </div>
       </div>
@@ -918,89 +918,89 @@ body::before {
 <!-- ═══════ PRICING ═══════ -->
 <section class="section" id="planes">
   <div class="container">
-    <span class="section-label reveal">Planes</span>
-    <h2 class="section-title reveal">Empieza gratis.<br>Upgrade cuando quieras.</h2>
-    
+    <span class="section-label reveal" data-i18n="price.label">Planes</span>
+    <h2 class="section-title reveal" data-i18n-html="price.title">Empieza gratis.<br>Upgrade cuando quieras.</h2>
+
     <div class="pricing-grid">
       <div class="pricing-card reveal">
         <div class="pricing-tier">Free</div>
-        <div class="pricing-price">$0 <span class="period">/mes</span></div>
-        <div class="pricing-desc">Para conocer The Edge sin compromiso.</div>
+        <div class="pricing-price">$0 <span class="period" data-i18n="price.period">/mes</span></div>
+        <div class="pricing-desc" data-i18n="price.free.desc">Para conocer The Edge sin compromiso.</div>
         <ul class="pricing-features">
-          <li>Morning briefing — top 3 noticias</li>
-          <li>3 consultas WhatsApp por día</li>
-          <li>Dashboard con informe del día</li>
-          <li>Watchlist básica</li>
+          <li data-i18n="price.free.f1">Morning briefing — top 3 noticias</li>
+          <li data-i18n="price.free.f2">3 consultas WhatsApp por día</li>
+          <li data-i18n="price.free.f3">Dashboard con informe del día</li>
+          <li data-i18n="price.free.f4">Watchlist básica</li>
         </ul>
-        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Empezar gratis</a>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank" data-i18n="price.free.btn">Empezar gratis</a>
       </div>
-      
+
       <div class="pricing-card featured reveal">
         <div class="pricing-tier">Pro</div>
-        <div class="pricing-price">$9 <span class="period">/mes</span></div>
-        <div class="pricing-desc">Para el inversor que toma decisiones informadas.</div>
+        <div class="pricing-price">$9 <span class="period" data-i18n="price.period">/mes</span></div>
+        <div class="pricing-desc" data-i18n="price.pro.desc">Para el inversor que toma decisiones informadas.</div>
         <ul class="pricing-features">
-          <li>Informe completo cada 6 horas</li>
-          <li>15 consultas WhatsApp por día</li>
-          <li>Historial de 7 días</li>
-          <li>Análisis real-time de mercado</li>
-          <li>4 analistas + Editor Jefe</li>
-          <li>Portfolio tracking</li>
+          <li data-i18n="price.pro.f1">Informe completo cada 6 horas</li>
+          <li data-i18n="price.pro.f2">15 consultas WhatsApp por día</li>
+          <li data-i18n="price.pro.f3">Historial de 7 días</li>
+          <li data-i18n="price.pro.f4">Análisis real-time de mercado</li>
+          <li data-i18n="price.pro.f5">4 analistas + Editor Jefe</li>
+          <li data-i18n="price.pro.f6">Portfolio tracking</li>
         </ul>
-        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Probar gratis 7 días →</a>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank" data-i18n="price.pro.btn">Probar gratis 7 días →</a>
       </div>
-      
+
       <div class="pricing-card reveal">
         <div class="pricing-tier">Premium</div>
-        <div class="pricing-price">$19 <span class="period">/mes</span></div>
-        <div class="pricing-desc">Para el inversor profesional que necesita todo.</div>
+        <div class="pricing-price">$19 <span class="period" data-i18n="price.period">/mes</span></div>
+        <div class="pricing-desc" data-i18n="price.prem.desc">Para el inversor profesional que necesita todo.</div>
         <ul class="pricing-features">
-          <li>Todo de Pro incluido</li>
-          <li>30 consultas WhatsApp por día</li>
-          <li>Historial completo de 30 días</li>
-          <li>Búsqueda avanzada en reportes</li>
-          <li>Conexiones cruzadas detalladas</li>
-          <li>Soporte directo prioritario</li>
-          <li>Exportación PDF con branding</li>
+          <li data-i18n="price.prem.f1">Todo de Pro incluido</li>
+          <li data-i18n="price.prem.f2">30 consultas WhatsApp por día</li>
+          <li data-i18n="price.prem.f3">Historial completo de 30 días</li>
+          <li data-i18n="price.prem.f4">Búsqueda avanzada en reportes</li>
+          <li data-i18n="price.prem.f5">Conexiones cruzadas detalladas</li>
+          <li data-i18n="price.prem.f6">Soporte directo prioritario</li>
+          <li data-i18n="price.prem.f7">Exportación PDF con branding</li>
         </ul>
-        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Probar gratis 7 días</a>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank" data-i18n="price.prem.btn">Probar gratis 7 días</a>
       </div>
     </div>
-    
-    <p class="pricing-note reveal">Todos los planes incluyen 7 días de prueba gratis. Sin contratos. Cancela cuando quieras.</p>
+
+    <p class="pricing-note reveal" data-i18n="price.note">Todos los planes incluyen 7 días de prueba gratis. Sin contratos. Cancela cuando quieras.</p>
   </div>
 </section>
 
 <!-- ═══════ FAQ ═══════ -->
 <section class="section" id="faq">
   <div class="container">
-    <span class="section-label reveal">Preguntas frecuentes</span>
-    <h2 class="section-title reveal">Lo que quieres saber.</h2>
-    
+    <span class="section-label reveal" data-i18n="faq.label">Preguntas frecuentes</span>
+    <h2 class="section-title reveal" data-i18n="faq.title">Lo que quieres saber.</h2>
+
     <div class="faq-list">
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿The Edge es asesoría financiera?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Somos análisis e información. Te ayudamos a pensar tus decisiones con datos, escenarios y conexiones que la mayoría no ve. No somos asesores regulados ni recomendamos comprar o vender activos específicos.</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq1.q">¿The Edge es asesoría financiera?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq1.a">No. Somos análisis e información. Te ayudamos a pensar tus decisiones con datos, escenarios y conexiones que la mayoría no ve. No somos asesores regulados ni recomendamos comprar o vender activos específicos.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Quiénes son los analistas?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">4 agentes AI especializados en Macro, Crypto, Mercados y Geopolítica, más un Editor Jefe que integra todo y detecta contradicciones. Monitoreamos 46 fuentes en 5 idiomas, cada 6 horas.</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq2.q">¿Quiénes son los analistas?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq2.a">4 agentes AI especializados en Macro, Crypto, Mercados y Geopolítica, más un Editor Jefe que integra todo y detecta contradicciones. Monitoreamos 46 fuentes en 5 idiomas, cada 6 horas.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Es diferente a ChatGPT?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Totalmente. ChatGPT responde preguntas genéricas. The Edge monitorea fuentes específicas en tiempo real, construye tesis en el tiempo, y te da opinión informada con un framework estructurado (HECHO → IMPACTO → ACCIÓN).</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq3.q">¿Es diferente a ChatGPT?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq3.a">Totalmente. ChatGPT responde preguntas genéricas. The Edge monitorea fuentes específicas en tiempo real, construye tesis en el tiempo, y te da opinión informada con un framework estructurado (HECHO → IMPACTO → ACCIÓN).</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Puedo cancelar cuando quiera?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí. Sin contratos, sin períodos mínimos, sin letras chicas. Cancelas desde WhatsApp o el dashboard y listo.</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq4.q">¿Puedo cancelar cuando quiera?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq4.a">Sí. Sin contratos, sin períodos mínimos, sin letras chicas. Cancelas desde WhatsApp o el dashboard y listo.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿En qué idioma están los informes?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">En español. Las fuentes están en 5 idiomas (inglés, español, portugués, japonés, mandarín), pero todo el análisis y el chat se entregan en español.</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq5.q">¿En qué idioma están los informes?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq5.a">En español. Las fuentes están en 5 idiomas (inglés, español, portugués, japonés, mandarín), pero todo el análisis y el chat se entregan en español.</div></div>
       </div>
       <div class="faq-item reveal">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Qué tipo de activos cubren?<span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Macro global, crypto (BTC, ETH, SOL, DeFi), mercados accionarios (foco LATAM + US), commodities (cobre, litio, petróleo), y geopolítica. Con énfasis en cómo todo se conecta con Latinoamérica.</div></div>
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')"><span data-i18n="faq6.q">¿Qué tipo de activos cubren?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq6.a">Macro global, crypto (BTC, ETH, SOL, DeFi), mercados accionarios (foco LATAM + US), commodities (cobre, litio, petróleo), y geopolítica. Con énfasis en cómo todo se conecta con Latinoamérica.</div></div>
       </div>
     </div>
   </div>
@@ -1009,15 +1009,15 @@ body::before {
 <!-- ═══════ FINAL CTA ═══════ -->
 <section class="final-cta">
   <div class="container">
-    <h2 class="reveal">Mejor información. Mejores decisiones.<br>Para <em style="color: var(--accent-bright); font-style: italic;">todos</em> los que invierten.</h2>
-    <p class="sub reveal">Tu analista ya revisó 46 fuentes hoy. Los mercados no esperan.</p>
+    <h2 class="reveal" data-i18n-html="cta.h2">Mejor información. Mejores decisiones.<br>Para <em style="color: var(--accent-bright); font-style: italic;">todos</em> los que invierten.</h2>
+    <p class="sub reveal" data-i18n="cta.sub">Tu analista ya revisó 46 fuentes hoy. Los mercados no esperan.</p>
     <div class="hero-ctas reveal">
       <a href="https://wa.me/13502231166" class="btn-primary" target="_blank">
         <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Empezar gratis por WhatsApp
+        <span data-i18n="cta.btn1">Empezar gratis por WhatsApp</span>
       </a>
       <a href="https://app.theedgelatam.io" class="btn-secondary" target="_blank">
-        Ver el informe de hoy →
+        <span data-i18n="cta.btn2">Ver el informe de hoy →</span>
       </a>
     </div>
   </div>
@@ -1027,7 +1027,7 @@ body::before {
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-brand">© 2026 The Edge LATAM · Inteligencia financiera independiente</div>
+      <div class="footer-brand" data-i18n="footer.brand">© 2026 The Edge LATAM · Inteligencia financiera independiente</div>
       <ul class="footer-links">
         <li><a href="https://app.theedgelatam.io" target="_blank">Dashboard</a></li>
         <li><a href="https://wa.me/13502231166" target="_blank">WhatsApp</a></li>
@@ -1038,6 +1038,397 @@ body::before {
 </footer>
 
 <script>
+/* ═══════════════════════════════════════════════════════════════════════════
+   i18n — Translations ES / EN / PT
+   ═══════════════════════════════════════════════════════════════════════════ */
+const T = {
+es: {
+  'meta.title': 'The Edge — Tu analista financiero personal | $9/mes',
+  'meta.desc': 'El analista financiero personal que cualquier persona que invierte debería tener pero no puede pagar. 4 analistas AI, 46 fuentes, 5 idiomas. $9/mes.',
+  'beta': 'Estamos en beta privada — Acceso anticipado disponible',
+  'nav.producto': 'Producto',
+  'nav.ejemplo': 'Ejemplo real',
+  'nav.precio': 'Precio',
+  'nav.planes': 'Planes',
+  'nav.cta': 'Acceso beta',
+  'hero.tag': 'Inteligencia financiera independiente',
+  'hero.h1': 'Tu analista financiero personal.<br><em>$9/mes</em> en vez de $150,000/año.',
+  'hero.sub': '<strong>4 analistas AI</strong> monitorean 46 fuentes en 5 idiomas cada 6 horas. Te dicen qué pasó, por qué importa, y qué considerar.<br>Sin conflictos de interés. Sin posiciones propias.',
+  'hero.cta1': 'Empezar gratis',
+  'hero.cta2': 'Ver el informe de hoy →',
+  'hero.m1': 'Fuentes globales',
+  'hero.m2': 'Idiomas',
+  'hero.m3': 'Frecuencia',
+  'hero.m4': 'Analistas AI',
+  'mission.quote': '\u201cEl analista financiero personal que cualquier persona que invierte debería tener — pero no puede pagar.\u201d',
+  'mission.body': 'Un analista de research en un family office cuesta <strong>$80,000–$150,000/año</strong>. Un wealth manager cobra <strong>1–2% de tu capital</strong>. The Edge te da esa misma función — alguien que monitorea el mundo, cruza la información, te explica qué está pasando, y te ayuda a pensar qué hacer — por <strong>$9/mes</strong>.',
+  'mission.tag': 'Para personas reales. No instituciones.',
+  'feat.label': 'Qué obtienes',
+  'feat.title': 'Todo lo que un analista de<br>$150K/año haría por ti.',
+  'feat.sub': 'Excepto cobrarte $150K.',
+  'feat1.title': 'Briefing cada 6 horas',
+  'feat1.desc': '4 analistas especializados (Macro, Crypto, Mercados, Geopolítica) + un Editor Jefe que integra todo y detecta contradicciones entre ellos.',
+  'feat1.d1': 'Framework HECHO → IMPACTO → ACCIÓN',
+  'feat1.d2': '46 fuentes en 5 idiomas',
+  'feat1.d3': 'Conexiones cruzadas entre noticias',
+  'feat2.title': 'Tu analista en WhatsApp',
+  'feat2.desc': '\u201c¿Qué hago con mi ETH?\u201d — respuestas con contexto real del mercado del día. No un chatbot genérico. Un analista que sabe qué pasó hoy.',
+  'feat2.d1': 'Preguntas sobre tus inversiones',
+  'feat2.d2': 'Contexto de tus posiciones',
+  'feat2.d3': 'Respuestas en segundos',
+  'feat3.title': 'Memoria acumulativa',
+  'feat3.desc': 'Conecta informes anteriores. Valida tesis con el tiempo. Track record público que puedes verificar. No olvida lo que dijo hace 3 semanas.',
+  'feat3.d1': 'Historial de análisis hasta 30 días',
+  'feat3.d2': 'Tesis validadas públicamente',
+  'feat3.d3': 'Portfolio tracking personalizado',
+  'ex.label': 'Así se ve un análisis real',
+  'ex.title': 'Esto es lo que recibes<br>cada mañana.',
+  'ex.sub': 'Extracto real del informe del 24 Feb 2026. Sin editar.',
+  'ex.header': 'REPORTE THE EDGE v5.0',
+  'ex.time': '24 Feb 2026 · 07:00 CLT',
+  'ex.analyst': '◆ NOTICIA PRINCIPAL · ALTA URGENCIA',
+  'ex.text': '<p><strong>US Sets Initial Duties on Indian Solar Imports at 126%</strong></p><p>Trump impuso aranceles hasta <span class="hl">146%</span> sobre paneles solares de India, Indonesia y Laos. Afecta <span class="hl">$15 mil millones</span> anuales en importaciones solares.</p><p><strong>Conexión cruzada:</strong> México y Brasil capturan demanda desplazada. 3 manufactureras mexicanas ya expandieron capacidad <span class="hl">40-60%</span> en Q1 2026 anticipando el impacto. El mercado aún no conectó esto.</p><p>Ventana estimada: <span class="hl">12-18 horas</span> para que mercados mexicanos/brasileños reaccionen completamente.</p>',
+  'ex.action.label': 'Acción sugerida',
+  'ex.action.text': 'Comprar México ETF (EWW $51-51.50) + Brasil ETF (EWZ $32.20-32.60). Mercado aún no pricing el redireccionamiento de $15B en flujos. Horizonte: 6-8 semanas.',
+  'ex.footer.text': '15 fuentes · 4 analistas · 5 continentes',
+  'ex.footer.cta': 'Recibirlo gratis →',
+  'comp.label': 'Por qué The Edge',
+  'comp.title': 'La misma función.<br>100x más barato.',
+  'comp.r1.name': 'Analista de research',
+  'comp.r1.price': '$80,000 — $150,000 /año',
+  'comp.r2.price': '$24,000 /año',
+  'comp.r3.price': '$5,000 — $30,000 /año',
+  'comp.r4.name': 'Wealth manager (1% AUM)',
+  'comp.r4.price': '$5,000 — $50,000 /año',
+  'comp.r5.price': '$149 — $999 /mes',
+  'comp.edge.price': '$9/mes',
+  'comp.msg.quote': 'No es más barato porque sea peor.',
+  'comp.msg.body': 'Es más barato porque <strong>la IA lo hace posible</strong>. Hasta ahora, tener a alguien monitoreando mercados globales, cruzando información de múltiples fuentes, y dándote análisis accionable era un privilegio de <strong>family offices e institucionales</strong>.',
+  'comp.highlight': 'The Edge democratiza eso.<br>Para personas reales que invierten.',
+  'price.label': 'Planes',
+  'price.title': 'Empieza gratis.<br>Upgrade cuando quieras.',
+  'price.period': '/mes',
+  'price.free.desc': 'Para conocer The Edge sin compromiso.',
+  'price.free.f1': 'Morning briefing — top 3 noticias',
+  'price.free.f2': '3 consultas WhatsApp por día',
+  'price.free.f3': 'Dashboard con informe del día',
+  'price.free.f4': 'Watchlist básica',
+  'price.free.btn': 'Empezar gratis',
+  'price.pro.desc': 'Para el inversor que toma decisiones informadas.',
+  'price.pro.f1': 'Informe completo cada 6 horas',
+  'price.pro.f2': '15 consultas WhatsApp por día',
+  'price.pro.f3': 'Historial de 7 días',
+  'price.pro.f4': 'Análisis real-time de mercado',
+  'price.pro.f5': '4 analistas + Editor Jefe',
+  'price.pro.f6': 'Portfolio tracking',
+  'price.pro.btn': 'Probar gratis 7 días →',
+  'price.prem.desc': 'Para el inversor profesional que necesita todo.',
+  'price.prem.f1': 'Todo de Pro incluido',
+  'price.prem.f2': '30 consultas WhatsApp por día',
+  'price.prem.f3': 'Historial completo de 30 días',
+  'price.prem.f4': 'Búsqueda avanzada en reportes',
+  'price.prem.f5': 'Conexiones cruzadas detalladas',
+  'price.prem.f6': 'Soporte directo prioritario',
+  'price.prem.f7': 'Exportación PDF con branding',
+  'price.prem.btn': 'Probar gratis 7 días',
+  'price.note': 'Todos los planes incluyen 7 días de prueba gratis. Sin contratos. Cancela cuando quieras.',
+  'faq.label': 'Preguntas frecuentes',
+  'faq.title': 'Lo que quieres saber.',
+  'faq1.q': '¿The Edge es asesoría financiera?',
+  'faq1.a': 'No. Somos análisis e información. Te ayudamos a pensar tus decisiones con datos, escenarios y conexiones que la mayoría no ve. No somos asesores regulados ni recomendamos comprar o vender activos específicos.',
+  'faq2.q': '¿Quiénes son los analistas?',
+  'faq2.a': '4 agentes AI especializados en Macro, Crypto, Mercados y Geopolítica, más un Editor Jefe que integra todo y detecta contradicciones. Monitoreamos 46 fuentes en 5 idiomas, cada 6 horas.',
+  'faq3.q': '¿Es diferente a ChatGPT?',
+  'faq3.a': 'Totalmente. ChatGPT responde preguntas genéricas. The Edge monitorea fuentes específicas en tiempo real, construye tesis en el tiempo, y te da opinión informada con un framework estructurado (HECHO → IMPACTO → ACCIÓN).',
+  'faq4.q': '¿Puedo cancelar cuando quiera?',
+  'faq4.a': 'Sí. Sin contratos, sin períodos mínimos, sin letras chicas. Cancelas desde WhatsApp o el dashboard y listo.',
+  'faq5.q': '¿En qué idioma están los informes?',
+  'faq5.a': 'En español. Las fuentes están en 5 idiomas (inglés, español, portugués, japonés, mandarín), pero todo el análisis y el chat se entregan en español.',
+  'faq6.q': '¿Qué tipo de activos cubren?',
+  'faq6.a': 'Macro global, crypto (BTC, ETH, SOL, DeFi), mercados accionarios (foco LATAM + US), commodities (cobre, litio, petróleo), y geopolítica. Con énfasis en cómo todo se conecta con Latinoamérica.',
+  'cta.h2': 'Mejor información. Mejores decisiones.<br>Para <em style="color: var(--accent-bright); font-style: italic;">todos</em> los que invierten.',
+  'cta.sub': 'Tu analista ya revisó 46 fuentes hoy. Los mercados no esperan.',
+  'cta.btn1': 'Empezar gratis por WhatsApp',
+  'cta.btn2': 'Ver el informe de hoy →',
+  'footer.brand': '© 2026 The Edge LATAM · Inteligencia financiera independiente'
+},
+
+en: {
+  'meta.title': 'The Edge — Your personal financial analyst | $9/month',
+  'meta.desc': 'The personal financial analyst every investor should have but can\'t afford. 4 AI analysts, 46 sources, 5 languages. $9/month.',
+  'beta': 'We\'re in private beta — Early access available',
+  'nav.producto': 'Product',
+  'nav.ejemplo': 'Live example',
+  'nav.precio': 'Pricing',
+  'nav.planes': 'Plans',
+  'nav.cta': 'Beta access',
+  'hero.tag': 'Independent financial intelligence',
+  'hero.h1': 'Your personal financial analyst.<br><em>$9/month</em> instead of $150,000/year.',
+  'hero.sub': '<strong>4 AI analysts</strong> monitor 46 sources in 5 languages every 6 hours. They tell you what happened, why it matters, and what to consider.<br>No conflicts of interest. No proprietary positions.',
+  'hero.cta1': 'Start free',
+  'hero.cta2': 'See today\'s report →',
+  'hero.m1': 'Global sources',
+  'hero.m2': 'Languages',
+  'hero.m3': 'Frequency',
+  'hero.m4': 'AI Analysts',
+  'mission.quote': '\u201cThe personal financial analyst every investor should have — but can\u2019t afford.\u201d',
+  'mission.body': 'A research analyst at a family office costs <strong>$80,000–$150,000/year</strong>. A wealth manager charges <strong>1–2% of your capital</strong>. The Edge gives you that same function — someone monitoring the world, cross-referencing information, explaining what\u2019s happening, and helping you think about what to do — for <strong>$9/month</strong>.',
+  'mission.tag': 'For real people. Not institutions.',
+  'feat.label': 'What you get',
+  'feat.title': 'Everything a $150K/year<br>analyst would do for you.',
+  'feat.sub': 'Except charge you $150K.',
+  'feat1.title': 'Briefing every 6 hours',
+  'feat1.desc': '4 specialized analysts (Macro, Crypto, Markets, Geopolitics) + an Editor-in-Chief who integrates everything and detects contradictions between them.',
+  'feat1.d1': 'FACT → IMPACT → ACTION framework',
+  'feat1.d2': '46 sources in 5 languages',
+  'feat1.d3': 'Cross-connections between stories',
+  'feat2.title': 'Your analyst on WhatsApp',
+  'feat2.desc': '\u201cWhat should I do with my ETH?\u201d — answers with real market context of the day. Not a generic chatbot. An analyst who knows what happened today.',
+  'feat2.d1': 'Questions about your investments',
+  'feat2.d2': 'Context on your positions',
+  'feat2.d3': 'Answers in seconds',
+  'feat3.title': 'Cumulative memory',
+  'feat3.desc': 'Connects previous reports. Validates theses over time. Public track record you can verify. Doesn\u2019t forget what it said 3 weeks ago.',
+  'feat3.d1': 'Analysis history up to 30 days',
+  'feat3.d2': 'Publicly validated theses',
+  'feat3.d3': 'Personalized portfolio tracking',
+  'ex.label': 'This is what a real analysis looks like',
+  'ex.title': 'This is what you receive<br>every morning.',
+  'ex.sub': 'Real excerpt from the Feb 24, 2026 report. Unedited.',
+  'ex.header': 'THE EDGE REPORT v5.0',
+  'ex.time': 'Feb 24, 2026 · 07:00 CLT',
+  'ex.analyst': '◆ TOP STORY · HIGH URGENCY',
+  'ex.text': '<p><strong>US Sets Initial Duties on Indian Solar Imports at 126%</strong></p><p>Trump imposed tariffs up to <span class="hl">146%</span> on solar panels from India, Indonesia and Laos. Affects <span class="hl">$15 billion</span> annually in solar imports.</p><p><strong>Cross-connection:</strong> Mexico and Brazil capture displaced demand. 3 Mexican manufacturers already expanded capacity <span class="hl">40-60%</span> in Q1 2026 anticipating the impact. The market hasn\u2019t connected this yet.</p><p>Estimated window: <span class="hl">12-18 hours</span> for Mexican/Brazilian markets to fully react.</p>',
+  'ex.action.label': 'Suggested action',
+  'ex.action.text': 'Buy Mexico ETF (EWW $51-51.50) + Brazil ETF (EWZ $32.20-32.60). Market not yet pricing the redirection of $15B in flows. Horizon: 6-8 weeks.',
+  'ex.footer.text': '15 sources · 4 analysts · 5 continents',
+  'ex.footer.cta': 'Get it free →',
+  'comp.label': 'Why The Edge',
+  'comp.title': 'Same function.<br>100x cheaper.',
+  'comp.r1.name': 'Research analyst',
+  'comp.r1.price': '$80,000 — $150,000 /year',
+  'comp.r2.price': '$24,000 /year',
+  'comp.r3.price': '$5,000 — $30,000 /year',
+  'comp.r4.name': 'Wealth manager (1% AUM)',
+  'comp.r4.price': '$5,000 — $50,000 /year',
+  'comp.r5.price': '$149 — $999 /month',
+  'comp.edge.price': '$9/month',
+  'comp.msg.quote': 'It\u2019s not cheaper because it\u2019s worse.',
+  'comp.msg.body': 'It\u2019s cheaper because <strong>AI makes it possible</strong>. Until now, having someone monitoring global markets, cross-referencing information from multiple sources, and giving you actionable analysis was a privilege of <strong>family offices and institutions</strong>.',
+  'comp.highlight': 'The Edge democratizes that.<br>For real people who invest.',
+  'price.label': 'Plans',
+  'price.title': 'Start free.<br>Upgrade when you want.',
+  'price.period': '/month',
+  'price.free.desc': 'Try The Edge with no commitment.',
+  'price.free.f1': 'Morning briefing — top 3 stories',
+  'price.free.f2': '3 WhatsApp queries per day',
+  'price.free.f3': 'Dashboard with today\u2019s report',
+  'price.free.f4': 'Basic watchlist',
+  'price.free.btn': 'Start free',
+  'price.pro.desc': 'For the investor who makes informed decisions.',
+  'price.pro.f1': 'Full report every 6 hours',
+  'price.pro.f2': '15 WhatsApp queries per day',
+  'price.pro.f3': '7-day history',
+  'price.pro.f4': 'Real-time market analysis',
+  'price.pro.f5': '4 analysts + Editor-in-Chief',
+  'price.pro.f6': 'Portfolio tracking',
+  'price.pro.btn': 'Try free for 7 days →',
+  'price.prem.desc': 'For the professional investor who needs everything.',
+  'price.prem.f1': 'Everything in Pro included',
+  'price.prem.f2': '30 WhatsApp queries per day',
+  'price.prem.f3': 'Full 30-day history',
+  'price.prem.f4': 'Advanced report search',
+  'price.prem.f5': 'Detailed cross-connections',
+  'price.prem.f6': 'Priority direct support',
+  'price.prem.f7': 'PDF export with branding',
+  'price.prem.btn': 'Try free for 7 days',
+  'price.note': 'All plans include a 7-day free trial. No contracts. Cancel anytime.',
+  'faq.label': 'Frequently asked questions',
+  'faq.title': 'What you want to know.',
+  'faq1.q': 'Is The Edge financial advice?',
+  'faq1.a': 'No. We provide analysis and information. We help you think through your decisions with data, scenarios, and connections most people miss. We\u2019re not regulated advisors and don\u2019t recommend buying or selling specific assets.',
+  'faq2.q': 'Who are the analysts?',
+  'faq2.a': '4 specialized AI agents in Macro, Crypto, Markets and Geopolitics, plus an Editor-in-Chief who integrates everything and detects contradictions. We monitor 46 sources in 5 languages, every 6 hours.',
+  'faq3.q': 'Is it different from ChatGPT?',
+  'faq3.a': 'Completely. ChatGPT answers generic questions. The Edge monitors specific sources in real-time, builds theses over time, and gives you informed opinions with a structured framework (FACT → IMPACT → ACTION).',
+  'faq4.q': 'Can I cancel anytime?',
+  'faq4.a': 'Yes. No contracts, no minimum periods, no fine print. Cancel from WhatsApp or the dashboard and you\u2019re done.',
+  'faq5.q': 'What language are the reports in?',
+  'faq5.a': 'In Spanish. Sources are in 5 languages (English, Spanish, Portuguese, Japanese, Mandarin), but all analysis and chat are delivered in Spanish.',
+  'faq6.q': 'What types of assets do you cover?',
+  'faq6.a': 'Global macro, crypto (BTC, ETH, SOL, DeFi), stock markets (LATAM + US focus), commodities (copper, lithium, oil), and geopolitics. With emphasis on how everything connects to Latin America.',
+  'cta.h2': 'Better information. Better decisions.<br>For <em style="color: var(--accent-bright); font-style: italic;">everyone</em> who invests.',
+  'cta.sub': 'Your analyst already reviewed 46 sources today. Markets don\u2019t wait.',
+  'cta.btn1': 'Start free on WhatsApp',
+  'cta.btn2': 'See today\u2019s report →',
+  'footer.brand': '© 2026 The Edge LATAM · Independent financial intelligence'
+},
+
+pt: {
+  'meta.title': 'The Edge — Seu analista financeiro pessoal | $9/mês',
+  'meta.desc': 'O analista financeiro pessoal que todo investidor deveria ter mas não pode pagar. 4 analistas AI, 46 fontes, 5 idiomas. $9/mês.',
+  'beta': 'Estamos em beta privado — Acesso antecipado disponível',
+  'nav.producto': 'Produto',
+  'nav.ejemplo': 'Exemplo real',
+  'nav.precio': 'Preço',
+  'nav.planes': 'Planos',
+  'nav.cta': 'Acesso beta',
+  'hero.tag': 'Inteligência financeira independente',
+  'hero.h1': 'Seu analista financeiro pessoal.<br><em>$9/mês</em> em vez de $150.000/ano.',
+  'hero.sub': '<strong>4 analistas AI</strong> monitoram 46 fontes em 5 idiomas a cada 6 horas. Eles dizem o que aconteceu, por que importa, e o que considerar.<br>Sem conflitos de interesse. Sem posições próprias.',
+  'hero.cta1': 'Começar grátis',
+  'hero.cta2': 'Ver o relatório de hoje →',
+  'hero.m1': 'Fontes globais',
+  'hero.m2': 'Idiomas',
+  'hero.m3': 'Frequência',
+  'hero.m4': 'Analistas AI',
+  'mission.quote': '\u201cO analista financeiro pessoal que todo investidor deveria ter — mas não pode pagar.\u201d',
+  'mission.body': 'Um analista de research em um family office custa <strong>$80.000–$150.000/ano</strong>. Um wealth manager cobra <strong>1–2% do seu capital</strong>. O The Edge te dá essa mesma função — alguém que monitora o mundo, cruza informações, explica o que está acontecendo, e te ajuda a pensar o que fazer — por <strong>$9/mês</strong>.',
+  'mission.tag': 'Para pessoas reais. Não instituições.',
+  'feat.label': 'O que você recebe',
+  'feat.title': 'Tudo o que um analista de<br>$150K/ano faria por você.',
+  'feat.sub': 'Sem cobrar $150K.',
+  'feat1.title': 'Briefing a cada 6 horas',
+  'feat1.desc': '4 analistas especializados (Macro, Crypto, Mercados, Geopolítica) + um Editor-Chefe que integra tudo e detecta contradições entre eles.',
+  'feat1.d1': 'Framework FATO → IMPACTO → AÇÃO',
+  'feat1.d2': '46 fontes em 5 idiomas',
+  'feat1.d3': 'Conexões cruzadas entre notícias',
+  'feat2.title': 'Seu analista no WhatsApp',
+  'feat2.desc': '\u201cO que faço com meu ETH?\u201d — respostas com contexto real do mercado do dia. Não é um chatbot genérico. Um analista que sabe o que aconteceu hoje.',
+  'feat2.d1': 'Perguntas sobre seus investimentos',
+  'feat2.d2': 'Contexto das suas posições',
+  'feat2.d3': 'Respostas em segundos',
+  'feat3.title': 'Memória acumulativa',
+  'feat3.desc': 'Conecta relatórios anteriores. Valida teses ao longo do tempo. Track record público que você pode verificar. Não esquece o que disse há 3 semanas.',
+  'feat3.d1': 'Histórico de análises até 30 dias',
+  'feat3.d2': 'Teses validadas publicamente',
+  'feat3.d3': 'Portfolio tracking personalizado',
+  'ex.label': 'Assim é uma análise real',
+  'ex.title': 'Isso é o que você recebe<br>toda manhã.',
+  'ex.sub': 'Trecho real do relatório de 24 Fev 2026. Sem edição.',
+  'ex.header': 'RELATÓRIO THE EDGE v5.0',
+  'ex.time': '24 Fev 2026 · 07:00 CLT',
+  'ex.analyst': '◆ NOTÍCIA PRINCIPAL · ALTA URGÊNCIA',
+  'ex.text': '<p><strong>US Sets Initial Duties on Indian Solar Imports at 126%</strong></p><p>Trump impôs tarifas de até <span class="hl">146%</span> sobre painéis solares da Índia, Indonésia e Laos. Afeta <span class="hl">$15 bilhões</span> anuais em importações solares.</p><p><strong>Conexão cruzada:</strong> México e Brasil capturam demanda deslocada. 3 fabricantes mexicanos já expandiram capacidade <span class="hl">40-60%</span> no Q1 2026 antecipando o impacto. O mercado ainda não conectou isso.</p><p>Janela estimada: <span class="hl">12-18 horas</span> para que mercados mexicanos/brasileiros reajam completamente.</p>',
+  'ex.action.label': 'Ação sugerida',
+  'ex.action.text': 'Comprar México ETF (EWW $51-51.50) + Brasil ETF (EWZ $32.20-32.60). Mercado ainda não precificando o redirecionamento de $15B em fluxos. Horizonte: 6-8 semanas.',
+  'ex.footer.text': '15 fontes · 4 analistas · 5 continentes',
+  'ex.footer.cta': 'Receber grátis →',
+  'comp.label': 'Por que The Edge',
+  'comp.title': 'A mesma função.<br>100x mais barato.',
+  'comp.r1.name': 'Analista de research',
+  'comp.r1.price': '$80.000 — $150.000 /ano',
+  'comp.r2.price': '$24.000 /ano',
+  'comp.r3.price': '$5.000 — $30.000 /ano',
+  'comp.r4.name': 'Wealth manager (1% AUM)',
+  'comp.r4.price': '$5.000 — $50.000 /ano',
+  'comp.r5.price': '$149 — $999 /mês',
+  'comp.edge.price': '$9/mês',
+  'comp.msg.quote': 'Não é mais barato porque é pior.',
+  'comp.msg.body': 'É mais barato porque <strong>a IA torna isso possível</strong>. Até agora, ter alguém monitorando mercados globais, cruzando informações de múltiplas fontes, e te dando análise acionável era um privilégio de <strong>family offices e institucionais</strong>.',
+  'comp.highlight': 'The Edge democratiza isso.<br>Para pessoas reais que investem.',
+  'price.label': 'Planos',
+  'price.title': 'Comece grátis.<br>Upgrade quando quiser.',
+  'price.period': '/mês',
+  'price.free.desc': 'Para conhecer o The Edge sem compromisso.',
+  'price.free.f1': 'Briefing matinal — top 3 notícias',
+  'price.free.f2': '3 consultas WhatsApp por dia',
+  'price.free.f3': 'Dashboard com relatório do dia',
+  'price.free.f4': 'Watchlist básica',
+  'price.free.btn': 'Começar grátis',
+  'price.pro.desc': 'Para o investidor que toma decisões informadas.',
+  'price.pro.f1': 'Relatório completo a cada 6 horas',
+  'price.pro.f2': '15 consultas WhatsApp por dia',
+  'price.pro.f3': 'Histórico de 7 dias',
+  'price.pro.f4': 'Análise real-time de mercado',
+  'price.pro.f5': '4 analistas + Editor-Chefe',
+  'price.pro.f6': 'Portfolio tracking',
+  'price.pro.btn': 'Testar grátis 7 dias →',
+  'price.prem.desc': 'Para o investidor profissional que precisa de tudo.',
+  'price.prem.f1': 'Tudo do Pro incluído',
+  'price.prem.f2': '30 consultas WhatsApp por dia',
+  'price.prem.f3': 'Histórico completo de 30 dias',
+  'price.prem.f4': 'Busca avançada em relatórios',
+  'price.prem.f5': 'Conexões cruzadas detalhadas',
+  'price.prem.f6': 'Suporte direto prioritário',
+  'price.prem.f7': 'Exportação PDF com branding',
+  'price.prem.btn': 'Testar grátis 7 dias',
+  'price.note': 'Todos os planos incluem 7 dias de teste grátis. Sem contratos. Cancele quando quiser.',
+  'faq.label': 'Perguntas frequentes',
+  'faq.title': 'O que você quer saber.',
+  'faq1.q': 'O The Edge é assessoria financeira?',
+  'faq1.a': 'Não. Somos análise e informação. Te ajudamos a pensar suas decisões com dados, cenários e conexões que a maioria não vê. Não somos assessores regulados nem recomendamos comprar ou vender ativos específicos.',
+  'faq2.q': 'Quem são os analistas?',
+  'faq2.a': '4 agentes AI especializados em Macro, Crypto, Mercados e Geopolítica, mais um Editor-Chefe que integra tudo e detecta contradições. Monitoramos 46 fontes em 5 idiomas, a cada 6 horas.',
+  'faq3.q': 'É diferente do ChatGPT?',
+  'faq3.a': 'Totalmente. O ChatGPT responde perguntas genéricas. O The Edge monitora fontes específicas em tempo real, constrói teses ao longo do tempo, e te dá opinião informada com um framework estruturado (FATO → IMPACTO → AÇÃO).',
+  'faq4.q': 'Posso cancelar quando quiser?',
+  'faq4.a': 'Sim. Sem contratos, sem períodos mínimos, sem letras miúdas. Cancele pelo WhatsApp ou pelo dashboard e pronto.',
+  'faq5.q': 'Em que idioma estão os relatórios?',
+  'faq5.a': 'Em espanhol. As fontes estão em 5 idiomas (inglês, espanhol, português, japonês, mandarim), mas toda a análise e o chat são entregues em espanhol.',
+  'faq6.q': 'Que tipos de ativos vocês cobrem?',
+  'faq6.a': 'Macro global, crypto (BTC, ETH, SOL, DeFi), mercados acionários (foco LATAM + US), commodities (cobre, lítio, petróleo), e geopolítica. Com ênfase em como tudo se conecta com a América Latina.',
+  'cta.h2': 'Melhor informação. Melhores decisões.<br>Para <em style="color: var(--accent-bright); font-style: italic;">todos</em> os que investem.',
+  'cta.sub': 'Seu analista já revisou 46 fontes hoje. Os mercados não esperam.',
+  'cta.btn1': 'Começar grátis pelo WhatsApp',
+  'cta.btn2': 'Ver o relatório de hoje →',
+  'footer.brand': '© 2026 The Edge LATAM · Inteligência financeira independente'
+}
+};
+
+/* ═══════ i18n Engine ═══════ */
+function setLanguage(lang) {
+  if (!T[lang]) return;
+  const dict = T[lang];
+
+  // textContent elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] != null) el.textContent = dict[key];
+  });
+
+  // innerHTML elements (contain <strong>, <br>, <em>, <span>, etc.)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key] != null) el.innerHTML = dict[key];
+  });
+
+  // Update <html lang>
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+
+  // Update <title> and meta tags
+  if (dict['meta.title']) document.title = dict['meta.title'];
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && dict['meta.desc']) metaDesc.setAttribute('content', dict['meta.desc']);
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  // Persist choice
+  try { localStorage.setItem('edge-lang', lang); } catch(e) {}
+}
+
+/* ═══════ Language button handlers ═══════ */
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+    if (lang) setLanguage(lang);
+  });
+});
+
+/* ═══════ Restore saved language on load ═══════ */
+(function() {
+  let saved = null;
+  try { saved = localStorage.getItem('edge-lang'); } catch(e) {}
+  if (saved && T[saved]) {
+    setLanguage(saved);
+  }
+  // If no saved preference, default is ES (already in HTML)
+})();
+
+/* ═══════ Reveal animations ═══════ */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -1049,6 +1440,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+/* ═══════ Smooth scroll ═══════ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
