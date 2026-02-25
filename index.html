@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edge — Tu analista financiero personal | $9/mes</title>
+<meta name="description" content="El analista financiero personal que cualquier persona que invierte debería tener pero no puede pagar. 4 analistas AI, 46 fuentes, 5 idiomas. $9/mes.">
+<meta property="og:title" content="The Edge — Inteligencia financiera para personas reales">
+<meta property="og:description" content="Un analista de research cuesta $150,000/año. The Edge te da esa misma función por $9/mes. Para personas reales. No instituciones.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theedgelatam.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B0F1A;
+  --bg-card: #111827;
+  --bg-elevated: #1E2538;
+  --accent: #2563EA;
+  --accent-light: #3B82F6;
+  --accent-dim: #2563EA20;
+  --accent-mid: #2563EA40;
+  --accent-glow: #2563EA12;
+  --accent-bright: #60A5FA;
+  --text: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --red: #EF4444;
+  --green: #22C55E;
+  --border: #1E293B;
+  --border-light: #334155;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Fira Code', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent-bright); text-decoration: none; }
+
+/* Grid bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.section { padding: 100px 0; position: relative; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ═══════ BETA BAR ═══════ */
+.beta-bar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 24px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  z-index: 101;
+}
+
+.beta-bar::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* ═══════ NAV ═══════ */
+.nav {
+  position: sticky; top: 0; width: 100%; z-index: 100;
+  padding: 0 24px;
+  background: #0B0F1Ae0;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+
+.nav-left { display: flex; align-items: center; gap: 20px; }
+
+.nav-logo {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  color: var(--text); letter-spacing: 2px; text-transform: uppercase;
+}
+.nav-logo span { color: var(--accent-light); }
+
+.lang-selector {
+  display: flex; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+
+.lang-btn {
+  padding: 5px 10px; font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-muted); background: transparent; border: none;
+  cursor: pointer; transition: all 0.2s; letter-spacing: 1px;
+}
+.lang-btn:hover { color: var(--text-secondary); }
+.lang-btn.active { background: var(--accent); color: white; }
+
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+
+.nav-links a {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px;
+  color: var(--text-secondary); transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  font-family: var(--font-mono) !important; font-size: 12px !important;
+  padding: 9px 18px; background: var(--accent); color: white !important;
+  border-radius: 8px; font-weight: 500; transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--accent-light); box-shadow: 0 4px 16px var(--accent-dim); }
+
+/* ═══════ HERO ═══════ */
+.hero {
+  min-height: calc(100vh - 108px);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden; padding: 60px 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute; top: -300px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 800px; margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid var(--accent-mid);
+  border-radius: 100px;
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 36px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400; line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero h1 em { color: var(--accent-bright); font-style: italic; }
+
+.hero-sub {
+  font-size: 18px; color: var(--text-secondary);
+  line-height: 1.75; max-width: 620px;
+  margin: 0 auto 44px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-sub strong { color: var(--text); font-weight: 500; }
+
+.hero-ctas {
+  display: flex; gap: 14px;
+  justify-content: center; flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 30px; background: var(--accent); color: white;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s;
+}
+.btn-primary:hover {
+  background: var(--accent-light); transform: translateY(-1px);
+  box-shadow: 0 8px 28px var(--accent-dim); color: white;
+}
+.btn-primary svg { width: 20px; height: 20px; fill: currentColor; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 30px; background: transparent; color: var(--text);
+  font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  border-radius: 10px; border: 1px solid var(--border-light);
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--text-muted); background: var(--bg-card); color: var(--text); }
+
+.hero-metrics {
+  display: flex; gap: 48px; justify-content: center;
+  margin-top: 56px; padding-top: 32px;
+  border-top: 1px solid var(--border);
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.hero-metric { text-align: center; }
+
+.hero-metric-value {
+  font-family: var(--font-mono); font-size: 26px;
+  color: var(--accent-bright); font-weight: 500;
+  line-height: 1; margin-bottom: 6px;
+}
+
+.hero-metric-label {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════ MISSION STATEMENT ═══════ */
+.mission {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  text-align: center;
+}
+
+.mission-quote {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text);
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+.mission-body {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.mission-body strong { color: var(--text); font-weight: 500; }
+
+.mission-tag {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 6px 16px;
+  border: 1px solid var(--accent-mid);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--accent-bright);
+}
+
+/* ═══════ SOURCES BAR ═══════ */
+.sources-bar {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.sources-track {
+  display: flex; gap: 48px;
+  animation: scroll-sources 25s linear infinite;
+  width: max-content;
+}
+
+.sources-track span {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--text-muted); letter-spacing: 1px;
+  white-space: nowrap; opacity: 0.5;
+}
+
+@keyframes scroll-sources {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ═══════ FEATURES ═══════ */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 56px;
+}
+
+.feature-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 32px 24px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+
+.feature-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+
+.feature-card:hover {
+  border-color: var(--border-light); transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.feature-card:hover::after { opacity: 1; }
+
+.feature-icon {
+  width: 42px; height: 42px;
+  background: var(--accent-dim); border: 1px solid var(--accent-mid);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; font-size: 18px;
+}
+
+.feature-card h3 {
+  font-family: var(--font-display); font-size: 21px;
+  font-weight: 400; font-style: italic; margin-bottom: 10px;
+}
+
+.feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+.feature-detail {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-muted); display: flex; flex-direction: column; gap: 6px;
+}
+
+.feature-detail span { display: flex; align-items: center; gap: 8px; }
+.feature-detail span::before { content: '→'; color: var(--accent-light); }
+
+/* ═══════ LIVE EXAMPLE ═══════ */
+.example-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  margin-top: 48px; max-width: 700px;
+}
+
+.example-header {
+  padding: 14px 24px; background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.example-header-left { display: flex; align-items: center; gap: 10px; }
+
+.example-dot { width: 8px; height: 8px; border-radius: 50%; }
+.example-dot.green { background: var(--green); animation: pulse-dot 2s ease-in-out infinite; }
+
+.example-header-title { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); letter-spacing: 2px; }
+.example-header-time { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+
+.example-body { padding: 24px; }
+
+.example-analyst {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; background: var(--accent-dim);
+  border: 1px solid var(--accent-mid); border-radius: 4px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 1px; color: var(--accent-bright); margin-bottom: 16px;
+}
+
+.example-text { font-size: 14.5px; line-height: 1.8; color: var(--text-secondary); }
+.example-text strong { color: var(--text); font-weight: 500; }
+.example-text .hl { color: var(--accent-bright); font-family: var(--font-mono); font-weight: 500; }
+.example-text p { margin-bottom: 12px; }
+.example-text p:last-child { margin-bottom: 0; }
+
+.example-action {
+  margin-top: 18px; padding: 14px 16px;
+  background: #0c1527; border: 1px solid #1a2d50;
+  border-left: 3px solid var(--accent); border-radius: 8px;
+  font-size: 13.5px; color: var(--text); line-height: 1.6;
+}
+
+.example-action-label {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--accent-bright); letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+
+.example-footer {
+  padding: 14px 24px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.example-footer-text { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+.example-footer-cta { font-family: var(--font-mono); font-size: 12px; color: var(--accent-bright); }
+
+/* ═══════ PRICE COMPARISON ═══════ */
+.comparison-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.comparison-table { max-width: 100%; }
+
+.comparison-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; border-bottom: 1px solid var(--border);
+}
+
+.comparison-name { font-size: 15px; color: var(--text-secondary); }
+
+.comparison-price {
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--text-muted); text-align: right;
+}
+
+.comparison-row.edge {
+  border-bottom: none; padding: 22px 20px;
+  background: var(--accent-dim); border: 1px solid var(--accent-mid);
+  border-radius: 10px; margin-top: 12px;
+}
+
+.comparison-row.edge .comparison-name { color: var(--accent-bright); font-weight: 600; font-size: 17px; }
+.comparison-row.edge .comparison-price { color: var(--accent-bright); font-size: 22px; font-weight: 500; }
+
+.comparison-message {
+  padding-top: 16px;
+}
+
+.comparison-message-quote {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.comparison-message-body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.comparison-message-body strong { color: var(--text); font-weight: 500; }
+
+.comparison-highlight {
+  padding: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--accent-bright);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ═══════ PRICING ═══════ */
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 56px;
+}
+
+.pricing-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 32px 24px;
+  display: flex; flex-direction: column; position: relative;
+}
+
+.pricing-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #0d1a35 0%, var(--bg-card) 100%);
+}
+
+.pricing-card.featured::before {
+  content: 'POPULAR'; position: absolute; top: -1px; left: 50%;
+  transform: translateX(-50%); padding: 4px 14px;
+  background: var(--accent); color: white;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 2px; border-radius: 0 0 8px 8px;
+}
+
+.pricing-tier {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;
+}
+
+.pricing-price {
+  font-family: var(--font-display); font-size: 42px; font-weight: 400;
+  color: var(--text); line-height: 1; margin-bottom: 4px;
+}
+
+.pricing-price .period { font-size: 16px; color: var(--text-muted); font-family: var(--font-body); }
+
+.pricing-desc {
+  font-size: 13px; color: var(--text-secondary);
+  margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+
+.pricing-features {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 12px; flex: 1; margin-bottom: 24px;
+}
+
+.pricing-features li {
+  font-size: 13.5px; color: var(--text-secondary);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+}
+.pricing-features li::before { content: '✓'; color: var(--accent-light); font-weight: 600; flex-shrink: 0; }
+
+.pricing-btn {
+  display: block; width: 100%; padding: 13px; text-align: center;
+  border-radius: 10px; font-family: var(--font-body); font-size: 14px;
+  font-weight: 600; border: 1px solid var(--border); background: transparent;
+  color: var(--text); cursor: pointer; transition: all 0.2s;
+}
+.pricing-btn:hover { border-color: var(--text-muted); background: var(--bg-elevated); color: var(--text); }
+
+.pricing-card.featured .pricing-btn { background: var(--accent); color: white; border-color: var(--accent); }
+.pricing-card.featured .pricing-btn:hover { background: var(--accent-light); box-shadow: 0 4px 16px var(--accent-dim); color: white; }
+
+.pricing-note {
+  text-align: center; margin-top: 28px;
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);
+}
+
+/* ═══════ FAQ ═══════ */
+.faq-list { margin-top: 48px; max-width: 680px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+
+.faq-question {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; background: none; border: none; cursor: pointer; text-align: left;
+  font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  color: var(--text); transition: color 0.2s;
+}
+.faq-question:hover { color: var(--accent-bright); }
+
+.faq-icon { font-size: 18px; color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+.faq-item.active .faq-icon { transform: rotate(45deg); }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.active .faq-answer { max-height: 300px; }
+
+.faq-answer-inner { padding-bottom: 22px; font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+/* ═══════ FINAL CTA ═══════ */
+.final-cta {
+  text-align: center; padding: 100px 0 120px; position: relative;
+}
+
+.final-cta::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 500px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 400; font-style: italic; line-height: 1.25;
+  margin-bottom: 18px; position: relative;
+  max-width: 640px; margin-left: auto; margin-right: auto;
+}
+
+.final-cta .sub {
+  font-size: 16px; color: var(--text-secondary);
+  margin-bottom: 36px; max-width: 480px;
+  margin-left: auto; margin-right: auto; position: relative;
+}
+
+/* ═══════ FOOTER ═══════ */
+.footer { border-top: 1px solid var(--border); padding: 40px 0; }
+
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+
+.footer-brand { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-secondary); }
+
+/* ═══════ ANIMATIONS ═══════ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════ MOBILE ═══════ */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
+
+/* WhatsApp icon inline SVG reuse */
+.wa-icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .comparison-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .beta-bar { font-size: 11px; }
+  .nav-links {
+    display: none; position: absolute; top: 64px; left: 0; width: 100%;
+    background: #0B0F1Af5; backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 16px 24px; gap: 12px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  .lang-selector { display: none; }
+  .hero h1 { font-size: clamp(28px, 8vw, 44px); }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; max-width: 320px; }
+  .hero-metrics { flex-direction: column; gap: 16px; }
+  .hero-metrics .hero-metric { display: flex; align-items: center; gap: 12px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .sources-bar { display: none; }
+  .mission-quote { font-size: clamp(20px, 5vw, 28px); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ BETA BAR ═══════ -->
+<div class="beta-bar">Estamos en beta privada — Acceso anticipado disponible</div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">THE <span>EDGE</span></a>
+      <div class="lang-selector">
+        <button class="lang-btn active">ES</button>
+        <button class="lang-btn">EN</button>
+        <button class="lang-btn">PT</button>
+      </div>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#ejemplo">Ejemplo real</a></li>
+      <li><a href="#precio">Precio</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://app.theedgelatam.io" class="nav-cta" target="_blank">Acceso beta</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">Inteligencia financiera independiente</div>
+      
+      <h1>Tu analista financiero personal.<br><em>$9/mes</em> en vez de $150,000/año.</h1>
+      
+      <p class="hero-sub">
+        <strong>4 analistas AI</strong> monitorean 46 fuentes en 5 idiomas cada 6 horas.
+        Te dicen qué pasó, por qué importa, y qué considerar.<br>
+        Sin conflictos de interés. Sin posiciones propias.
+      </p>
+      
+      <div class="hero-ctas">
+        <a href="https://wa.me/13502231166" class="btn-primary" target="_blank">
+          <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Empezar gratis
+        </a>
+        <a href="https://app.theedgelatam.io" class="btn-secondary" target="_blank">
+          Ver el informe de hoy →
+        </a>
+      </div>
+      
+      <div class="hero-metrics">
+        <div class="hero-metric">
+          <div class="hero-metric-value">46</div>
+          <div class="hero-metric-label">Fuentes globales</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-value">5</div>
+          <div class="hero-metric-label">Idiomas</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-value">6h</div>
+          <div class="hero-metric-label">Frecuencia</div>
+        </div>
+        <div class="hero-metric">
+          <div class="hero-metric-value">4+1</div>
+          <div class="hero-metric-label">Analistas AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MISSION ═══════ -->
+<section class="mission">
+  <div class="container">
+    <p class="mission-quote reveal">
+      "El analista financiero personal que cualquier persona que invierte debería tener — pero no puede pagar."
+    </p>
+    <p class="mission-body reveal">
+      Un analista de research en un family office cuesta <strong>$80,000–$150,000/año</strong>. 
+      Un wealth manager cobra <strong>1–2% de tu capital</strong>. 
+      The Edge te da esa misma función — alguien que monitorea el mundo, cruza la información, 
+      te explica qué está pasando, y te ayuda a pensar qué hacer — por <strong>$9/mes</strong>.
+    </p>
+    <span class="mission-tag reveal">Para personas reales. No instituciones.</span>
+  </div>
+</section>
+
+<!-- ═══════ SOURCES ═══════ -->
+<div class="sources-bar">
+  <div class="sources-track">
+    <span>Fed</span><span>BCCh</span><span>ECB</span><span>BoJ</span><span>PBoC</span><span>Reuters</span><span>Bloomberg</span><span>Financial Times</span><span>CoinDesk</span><span>OilPrice</span><span>IMF</span><span>BIS</span><span>World Bank</span><span>Ambito</span><span>El Mercurio</span><span>Valor Econômico</span>
+    <span>Fed</span><span>BCCh</span><span>ECB</span><span>BoJ</span><span>PBoC</span><span>Reuters</span><span>Bloomberg</span><span>Financial Times</span><span>CoinDesk</span><span>OilPrice</span><span>IMF</span><span>BIS</span><span>World Bank</span><span>Ambito</span><span>El Mercurio</span><span>Valor Econômico</span>
+  </div>
+</div>
+
+<!-- ═══════ FEATURES ═══════ -->
+<section class="section" id="producto">
+  <div class="container">
+    <span class="section-label reveal">Qué obtienes</span>
+    <h2 class="section-title reveal">Todo lo que un analista de<br>$150K/año haría por ti.</h2>
+    <p class="section-subtitle reveal">Excepto cobrarte $150K.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">📊</div>
+        <h3>Briefing cada 6 horas</h3>
+        <p>4 analistas especializados (Macro, Crypto, Mercados, Geopolítica) + un Editor Jefe que integra todo y detecta contradicciones entre ellos.</p>
+        <div class="feature-detail">
+          <span>Framework HECHO → IMPACTO → ACCIÓN</span>
+          <span>46 fuentes en 5 idiomas</span>
+          <span>Conexiones cruzadas entre noticias</span>
+        </div>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon">💬</div>
+        <h3>Tu analista en WhatsApp</h3>
+        <p>"¿Qué hago con mi ETH?" — respuestas con contexto real del mercado del día. No un chatbot genérico. Un analista que sabe qué pasó hoy.</p>
+        <div class="feature-detail">
+          <span>Preguntas sobre tus inversiones</span>
+          <span>Contexto de tus posiciones</span>
+          <span>Respuestas en segundos</span>
+        </div>
+      </div>
+      
+      <div class="feature-card reveal">
+        <div class="feature-icon">🧠</div>
+        <h3>Memoria acumulativa</h3>
+        <p>Conecta informes anteriores. Valida tesis con el tiempo. Track record público que puedes verificar. No olvida lo que dijo hace 3 semanas.</p>
+        <div class="feature-detail">
+          <span>Historial de análisis hasta 30 días</span>
+          <span>Tesis validadas públicamente</span>
+          <span>Portfolio tracking personalizado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EXAMPLE ═══════ -->
+<section class="section" id="ejemplo" style="padding-top: 40px;">
+  <div class="container">
+    <span class="section-label reveal">Así se ve un análisis real</span>
+    <h2 class="section-title reveal">Esto es lo que recibes<br>cada mañana.</h2>
+    <p class="section-subtitle reveal">Extracto real del informe del 24 Feb 2026. Sin editar.</p>
+    
+    <div class="example-card reveal">
+      <div class="example-header">
+        <div class="example-header-left">
+          <div class="example-dot green"></div>
+          <span class="example-header-title">REPORTE THE EDGE v5.0</span>
+        </div>
+        <span class="example-header-time">24 Feb 2026 · 07:00 CLT</span>
+      </div>
+      <div class="example-body">
+        <div class="example-analyst">◆ NOTICIA PRINCIPAL · ALTA URGENCIA</div>
+        <div class="example-text">
+          <p><strong>US Sets Initial Duties on Indian Solar Imports at 126%</strong></p>
+          <p>Trump impuso aranceles hasta <span class="hl">146%</span> sobre paneles solares de India, Indonesia y Laos. Afecta <span class="hl">$15 mil millones</span> anuales en importaciones solares.</p>
+          <p><strong>Conexión cruzada:</strong> México y Brasil capturan demanda desplazada. 3 manufactureras mexicanas ya expandieron capacidad <span class="hl">40-60%</span> en Q1 2026 anticipando el impacto. El mercado aún no conectó esto.</p>
+          <p>Ventana estimada: <span class="hl">12-18 horas</span> para que mercados mexicanos/brasileños reaccionen completamente.</p>
+        </div>
+        <div class="example-action">
+          <div class="example-action-label">Acción sugerida</div>
+          Comprar México ETF (EWW $51-51.50) + Brasil ETF (EWZ $32.20-32.60). Mercado aún no pricing el redireccionamiento de $15B en flujos. Horizonte: 6-8 semanas.
+        </div>
+      </div>
+      <div class="example-footer">
+        <span class="example-footer-text">15 fuentes · 4 analistas · 5 continentes</span>
+        <a href="https://wa.me/13502231166" class="example-footer-cta" target="_blank">Recibirlo gratis →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICE COMPARISON ═══════ -->
+<section class="section" id="precio">
+  <div class="container">
+    <span class="section-label reveal">Por qué The Edge</span>
+    <h2 class="section-title reveal">La misma función.<br>100x más barato.</h2>
+    
+    <div class="comparison-layout">
+      <div class="comparison-table reveal">
+        <div class="comparison-row">
+          <span class="comparison-name">Analista de research</span>
+          <span class="comparison-price">$80,000 — $150,000 /año</span>
+        </div>
+        <div class="comparison-row">
+          <span class="comparison-name">Bloomberg Terminal</span>
+          <span class="comparison-price">$24,000 /año</span>
+        </div>
+        <div class="comparison-row">
+          <span class="comparison-name">Capital Economics</span>
+          <span class="comparison-price">$5,000 — $30,000 /año</span>
+        </div>
+        <div class="comparison-row">
+          <span class="comparison-name">Wealth manager (1% AUM)</span>
+          <span class="comparison-price">$5,000 — $50,000 /año</span>
+        </div>
+        <div class="comparison-row">
+          <span class="comparison-name">Delphi Digital</span>
+          <span class="comparison-price">$149 — $999 /mes</span>
+        </div>
+        <div class="comparison-row edge">
+          <span class="comparison-name">The Edge Pro</span>
+          <span class="comparison-price">$9/mes</span>
+        </div>
+      </div>
+      
+      <div class="comparison-message reveal">
+        <p class="comparison-message-quote">No es más barato porque sea peor.</p>
+        <p class="comparison-message-body">
+          Es más barato porque <strong>la IA lo hace posible</strong>. 
+          Hasta ahora, tener a alguien monitoreando mercados globales, cruzando información de múltiples fuentes, 
+          y dándote análisis accionable era un privilegio de <strong>family offices e institucionales</strong>.
+        </p>
+        <div class="comparison-highlight">
+          The Edge democratiza eso.<br>Para personas reales que invierten.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section class="section" id="planes">
+  <div class="container">
+    <span class="section-label reveal">Planes</span>
+    <h2 class="section-title reveal">Empieza gratis.<br>Upgrade cuando quieras.</h2>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price">$0 <span class="period">/mes</span></div>
+        <div class="pricing-desc">Para conocer The Edge sin compromiso.</div>
+        <ul class="pricing-features">
+          <li>Morning briefing — top 3 noticias</li>
+          <li>3 consultas WhatsApp por día</li>
+          <li>Dashboard con informe del día</li>
+          <li>Watchlist básica</li>
+        </ul>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Empezar gratis</a>
+      </div>
+      
+      <div class="pricing-card featured reveal">
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">$9 <span class="period">/mes</span></div>
+        <div class="pricing-desc">Para el inversor que toma decisiones informadas.</div>
+        <ul class="pricing-features">
+          <li>Informe completo cada 6 horas</li>
+          <li>15 consultas WhatsApp por día</li>
+          <li>Historial de 7 días</li>
+          <li>Análisis real-time de mercado</li>
+          <li>4 analistas + Editor Jefe</li>
+          <li>Portfolio tracking</li>
+        </ul>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Probar gratis 7 días →</a>
+      </div>
+      
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-price">$19 <span class="period">/mes</span></div>
+        <div class="pricing-desc">Para el inversor profesional que necesita todo.</div>
+        <ul class="pricing-features">
+          <li>Todo de Pro incluido</li>
+          <li>30 consultas WhatsApp por día</li>
+          <li>Historial completo de 30 días</li>
+          <li>Búsqueda avanzada en reportes</li>
+          <li>Conexiones cruzadas detalladas</li>
+          <li>Soporte directo prioritario</li>
+          <li>Exportación PDF con branding</li>
+        </ul>
+        <a href="https://wa.me/13502231166" class="pricing-btn" target="_blank">Probar gratis 7 días</a>
+      </div>
+    </div>
+    
+    <p class="pricing-note reveal">Todos los planes incluyen 7 días de prueba gratis. Sin contratos. Cancela cuando quieras.</p>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="section" id="faq">
+  <div class="container">
+    <span class="section-label reveal">Preguntas frecuentes</span>
+    <h2 class="section-title reveal">Lo que quieres saber.</h2>
+    
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿The Edge es asesoría financiera?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. Somos análisis e información. Te ayudamos a pensar tus decisiones con datos, escenarios y conexiones que la mayoría no ve. No somos asesores regulados ni recomendamos comprar o vender activos específicos.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Quiénes son los analistas?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">4 agentes AI especializados en Macro, Crypto, Mercados y Geopolítica, más un Editor Jefe que integra todo y detecta contradicciones. Monitoreamos 46 fuentes en 5 idiomas, cada 6 horas.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Es diferente a ChatGPT?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Totalmente. ChatGPT responde preguntas genéricas. The Edge monitorea fuentes específicas en tiempo real, construye tesis en el tiempo, y te da opinión informada con un framework estructurado (HECHO → IMPACTO → ACCIÓN).</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Puedo cancelar cuando quiera?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sí. Sin contratos, sin períodos mínimos, sin letras chicas. Cancelas desde WhatsApp o el dashboard y listo.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿En qué idioma están los informes?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">En español. Las fuentes están en 5 idiomas (inglés, español, portugués, japonés, mandarín), pero todo el análisis y el chat se entregan en español.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">¿Qué tipo de activos cubren?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Macro global, crypto (BTC, ETH, SOL, DeFi), mercados accionarios (foco LATAM + US), commodities (cobre, litio, petróleo), y geopolítica. Con énfasis en cómo todo se conecta con Latinoamérica.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FINAL CTA ═══════ -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="reveal">Mejor información. Mejores decisiones.<br>Para <em style="color: var(--accent-bright); font-style: italic;">todos</em> los que invierten.</h2>
+    <p class="sub reveal">Tu analista ya revisó 46 fuentes hoy. Los mercados no esperan.</p>
+    <div class="hero-ctas reveal">
+      <a href="https://wa.me/13502231166" class="btn-primary" target="_blank">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Empezar gratis por WhatsApp
+      </a>
+      <a href="https://app.theedgelatam.io" class="btn-secondary" target="_blank">
+        Ver el informe de hoy →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">© 2026 The Edge LATAM · Inteligencia financiera independiente</div>
+      <ul class="footer-links">
+        <li><a href="https://app.theedgelatam.io" target="_blank">Dashboard</a></li>
+        <li><a href="https://wa.me/13502231166" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/theedgelatam" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 50);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links')?.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
