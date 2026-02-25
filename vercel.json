@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/dashboard",
+      "destination": "https://app.theedgelatam.io/dashboard",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
